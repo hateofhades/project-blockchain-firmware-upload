@@ -4,7 +4,7 @@ import { WidgetType } from 'types/widget.types';
 import { DashboardHeader, LeftPanel, Widget } from './components';
 import styles from './dashboard.styles';
 // @ts-ignore
-import { ApproveRelease, GetSlots, RejectRelease } from './widgets';
+import { ApproveRelease, GetSlots, RejectRelease, ProposeRelease } from './widgets';
 
 const dashboardWidgets: WidgetType[] = [
   {
@@ -21,6 +21,11 @@ const dashboardWidgets: WidgetType[] = [
     title: 'Reject Release',
     widget: RejectRelease,
     description: 'Reject a proposed release on-chain'
+  },
+  {
+    title: 'Propose Release',
+    widget: ProposeRelease,
+    description: 'Propose a new release on-chain'
   }
 ];
 

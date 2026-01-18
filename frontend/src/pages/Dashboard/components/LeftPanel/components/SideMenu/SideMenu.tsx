@@ -1,4 +1,4 @@
-import { faBan, faCheckDouble, faChevronUp, faListCheck } from '@fortawesome/free-solid-svg-icons';
+import { faBan, faCheckDouble, faChevronUp, faListCheck, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import { useState } from 'react';
@@ -22,6 +22,11 @@ const menuItems: MenuItemsType[] = [
     title: 'Reject Release',
     icon: faBan,
     id: ItemsIdentifiersEnum.rejectRelease
+  },
+  {
+    title: 'Propose Release',
+    icon: faPaperPlane,
+    id: ItemsIdentifiersEnum.proposeRelease
   }
 ];
 
