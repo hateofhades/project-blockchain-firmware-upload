@@ -13,6 +13,7 @@ export const Widget = ({
     <Card
       title={title}
       description={description}
+      // @ts-ignore
       reference={reference}
       anchor={anchor}
     >

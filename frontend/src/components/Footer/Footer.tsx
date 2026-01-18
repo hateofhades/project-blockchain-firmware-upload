@@ -22,23 +22,9 @@ export const Footer = () => {
   const navigate = useNavigate();
   const currentYear = DateTime.now().year;
 
-  const handleDisclaimerClick = (event: MouseEvent<HTMLDivElement>) => {
-    event.preventDefault();
-    navigate(RouteNamesEnum.disclaimer);
-  };
-
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
-        <div className={styles.footerDescription}>
-          <div
-            onClick={handleDisclaimerClick}
-            className={styles.footerDisclaimerLink}
-          >
-            Disclaimer
-          </div>
-        </div>
-
         <div className={styles.footerDescription}>
           <span className={styles.footerDescriptionNetwork}>
             {network.id} Build
@@ -52,7 +38,7 @@ export const Footer = () => {
 
           <FontAwesomeIcon icon={faHeart} className={styles.footerHeartIcon} />
 
-          <span>by the MultiversX team, {currentYear}</span>
+          <span>by Andrei Serban, Danut Aldea, Irina Nita, Gabriel Pavaloiu, {currentYear}</span>
         </div>
       </div>
     </footer>

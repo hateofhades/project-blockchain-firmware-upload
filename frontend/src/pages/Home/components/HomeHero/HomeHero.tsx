@@ -70,64 +70,18 @@ export const HomeHero = () => {
     <div className={heroContainerClasses}>
       <div className={styles.heroSectionTop}>
         <div className={styles.heroSectionTopContent}>
-          <h1 className={styles.heroTitle}>dApp Template</h1>
+          <h1 className={styles.heroTitle}>Firmware Update Contract</h1>
 
           <p className={styles.heroDescription}>
-            The sdk-dapp starter project for any dApp built on the MultiversX
-            blockchain.
+            Please connect your wallet to interact with the Firmware Update
+            Smart Contract deployed on MultiversX Blockchain.
           </p>
         </div>
 
         <div className={styles.heroSectionTopButtons}>
           <Button onClick={handleLogIn}>Connect Wallet</Button>
-
-          <a
-            target='_blank'
-            rel='noreferrer'
-            href={DOCUMENTATION_LINK}
-            className={styles.heroSectionTopDocButton}
-          >
-            <span className={styles.heroSectionTopDocButtonText}>
-              See Documentation
-            </span>
-
-            <ArrowUpRightIcon />
-          </a>
         </div>
       </div>
-
-      {activeHomeTheme && (
-        <div className={styles.heroSectionBottom}>
-          {homeThemeOptions.map((themeOption) => (
-            <div
-              key={themeOption.identifier}
-              onClick={handleThemeSwitch(themeOption.identifier)}
-              className={classNames(styles.heroSectionBottomThemeOptions, {
-                [styles.heroSectionBottomThemeOptionsOpacityFull]:
-                  themeOption.identifier === activeHomeTheme.identifier
-              })}
-            >
-              <div className={styles.heroSectionBottomThemeOption}>
-                <themeOption.icon className={styles.themeOptionIcon} />
-
-                <span className={styles.themeOptionTitle}>
-                  {themeOption.label}
-                </span>
-              </div>
-
-              {themeOption.identifier === activeHomeTheme.identifier && (
-                <Fragment>
-                  <span className={styles.themeOptionActiveDot} />
-
-                  <div className={styles.themeOptionActiveLabel}>
-                    {themeOption.title}
-                  </div>
-                </Fragment>
-              )}
-            </div>
-          ))}
-        </div>
-      )}
     </div>
   );
 };
