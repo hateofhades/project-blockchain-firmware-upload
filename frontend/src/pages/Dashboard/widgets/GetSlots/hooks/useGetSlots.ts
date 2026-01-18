@@ -84,7 +84,9 @@ export const useGetSlots = () => {
             const response = await controller.runQuery(query);
             const parsedResponse = (await controller.parseQueryResponse(response))[0] ?? [];
 
-            const parsedSlots = parsedResponse.map((item: any) => parseSlotItem(item));
+            let parsedSlots = parsedResponse.map((item: any) => parseSlotItem(item));
+            // @ts-ignore
+            parsedSlots = parsedSlots.sort((a, b) => (a.version < b.version ? 1 : -1));
 
             setSlots(parsedSlots);
         } catch (err) {

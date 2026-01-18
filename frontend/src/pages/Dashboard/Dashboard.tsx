@@ -1,10 +1,10 @@
 import classNames from 'classnames';
 import { useEffect, useState } from 'react';
-import { contractAddress } from 'config';
 import { WidgetType } from 'types/widget.types';
 import { DashboardHeader, LeftPanel, Widget } from './components';
 import styles from './dashboard.styles';
-import { GetSlots } from './widgets';
+// @ts-ignore
+import { ApproveRelease, GetSlots, RejectRelease } from './widgets';
 
 const dashboardWidgets: WidgetType[] = [
   {
@@ -12,6 +12,16 @@ const dashboardWidgets: WidgetType[] = [
     widget: GetSlots,
     description: 'Read-only query that lists release from the contract'
   },
+  {
+    title: 'Approve Release',
+    widget: ApproveRelease,
+    description: 'Approve a proposed release on-chain'
+  },
+  {
+    title: 'Reject Release',
+    widget: RejectRelease,
+    description: 'Reject a proposed release on-chain'
+  }
 ];
 
 export const Dashboard = () => {

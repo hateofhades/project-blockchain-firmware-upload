@@ -117,21 +117,23 @@ export const GetSlots = () => {
 
                                 <div className={styles.slotRow}>
                                     <Label>Approvals</Label>
-                                    {slot.approvals.length ? (
-                                        <div className={styles.approvals}>
-                                            {slot.approvals.map((approval) => (
-                                                <MvxDataWithExplorerLink
-                                                    key={approval}
-                                                    data={approval}
-                                                    withTooltip={true}
-                                                    className={styles.address}
-                                                    explorerLink={`${explorerAddress}/${ACCOUNTS_ENDPOINT}/${approval}`}
-                                                />
-                                            ))}
-                                        </div>
-                                    ) : (
-                                        <span className={styles.empty}>No approvals yet</span>
-                                    )}
+                                    { // @ts-ignore
+                                        slot.approvals.length ? (
+                                            <div className={styles.approvals}>
+                                                { // @ts-ignore
+                                                    slot.approvals.map((approval) => (
+                                                        <MvxDataWithExplorerLink
+                                                            key={approval}
+                                                            data={approval}
+                                                            withTooltip={true}
+                                                            className={styles.address}
+                                                            explorerLink={`${explorerAddress}/${ACCOUNTS_ENDPOINT}/${approval}`}
+                                                        />
+                                                    ))}
+                                            </div>
+                                        ) : (
+                                            <span className={styles.empty}>No approvals yet</span>
+                                        )}
                                 </div>
                             </div>
                         ))}

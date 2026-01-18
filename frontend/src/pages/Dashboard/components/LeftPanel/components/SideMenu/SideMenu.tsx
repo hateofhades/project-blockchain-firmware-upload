@@ -1,18 +1,7 @@
-import {
-  faChevronUp,
-  faFilter,
-  faFingerprint,
-  faListCheck,
-  faPenNib,
-  faRectangleList,
-  faTableTennisPaddleBall
-} from '@fortawesome/free-solid-svg-icons';
+import { faBan, faCheckDouble, faChevronUp, faListCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import { useState } from 'react';
-import { ReactComponent as IconBatch } from 'assets/img/batch-tx.svg';
-import { ReactComponent as IconAbi } from 'assets/img/ping-pong-abi.svg';
-import { ReactComponent as IconBackend } from 'assets/img/ping-pong-backend.svg';
 import { ItemsIdentifiersEnum } from 'pages/Dashboard/dashboard.types';
 import { ItemIcon } from './components';
 import styles from './sideMenu.styles';
@@ -23,14 +12,22 @@ const menuItems: MenuItemsType[] = [
     title: 'All Releases',
     icon: faListCheck,
     id: ItemsIdentifiersEnum.getSlots
+  },
+  {
+    title: 'Approve Release',
+    icon: faCheckDouble,
+    id: ItemsIdentifiersEnum.approveRelease
+  },
+  {
+    title: 'Reject Release',
+    icon: faBan,
+    id: ItemsIdentifiersEnum.rejectRelease
   }
 ];
 
 export const SideMenu = ({ setIsOpen }: SideMenuPropsType) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [activeItem, setActiveItem] = useState(
-    ItemsIdentifiersEnum.pingPongRaw
-  );
+  const [activeItem, setActiveItem] = useState(ItemsIdentifiersEnum.getSlots);
 
   const toggleCollapse = () => {
     setIsCollapsed((isCollapsed) => !isCollapsed);
