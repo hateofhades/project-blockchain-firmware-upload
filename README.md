@@ -6,8 +6,9 @@ This project is a blockchain application that includes both backend and frontend
 
 To run the application, follow these steps:
 
-1. **Install Dependencies**: `npm install` in the root
-2. **Start the Backend**: `npm run dev` in the root
+1. **Install Dependencies**: `npm install` in the root and `frontend/` directories
+2. **Build the Frontend**: `npm run build-devnet` in the `frontend/` directory
+3. **Start the Backend**: `npm run dev` in the root
 
 ## Frontend Access
 
