@@ -6,11 +6,12 @@ import svgrPlugin from 'vite-plugin-svgr';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
+  base: '/ui',
   server: {
     port: Number(process.env.PORT) || 3000,
     strictPort: true,
     host: true,
-    https: true,
+    https: false,
     watch: {
       usePolling: false,
       useFsEvents: false,

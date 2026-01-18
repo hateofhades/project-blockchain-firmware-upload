@@ -10,11 +10,11 @@ app.use('/health', healthRouter);
 app.use('/device', deviceRouter);
 
 // Serve all static assets from dist/ under /ui
-app.use('/ui', express.static(path.join(__dirname, "../frontend/dist")));
+app.use('/ui', express.static(path.join(__dirname, "../frontend/build")));
 
 // Fallback: catch /ui/* and serve index.html for client-side routing
 app.use('/ui', (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend/dist", 'index.html'));
+    res.sendFile(path.join(__dirname, "../frontend/build", 'index.html'));
 });
 
 export default app;
